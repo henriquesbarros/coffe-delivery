@@ -26,44 +26,49 @@ export const HeaderButtonsContainer = styled.div`
       color: ${(props) => props.theme.purple};
     }
   }
+`
 
-  button {
-    position: relative;
+interface CartButtonProps {
+  'bg-color': 'yellow-light' | 'purple-dark'
+  'icon-color': 'yellow-dark' | 'white'
+}
+
+export const CartButton = styled.button<CartButtonProps>`
+  position: relative;
+  display: flex;
+
+  align-items: center;
+
+  padding: 0.625rem; /* 10px */
+  border-radius: 8px;
+  border: none;
+
+  background: ${(props) => props.theme[`${props['bg-color']}`]};
+
+  cursor: pointer;
+
+  svg {
+    color: ${(props) => props.theme[`${props['icon-color']}`]};
+  }
+
+  span {
+    position: absolute;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    padding: 0.625rem; /* 10px */
-    border-radius: 8px;
-    border: none;
+    padding: 0.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
 
-    background: ${(props) => props.theme['yellow-light']};
-
-    cursor: pointer;
-
-    svg {
-      color: ${(props) => props.theme['yellow-dark']};
-    }
-
-    span {
-      position: absolute;
-      top: calc(-1.25rem / 2);
-      right: calc(-1.25rem / 2);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0.75rem;
-      width: 1.25rem;
-      height: 1.25rem;
-      border-radius: 50%;
-
-      font-weight: 700;
-      font-size: 0.75rem;
-      color: ${(props) => props.theme.white};
-      background: ${(props) => props.theme['yellow-dark']};
-      border-radius: 10px;
-    }
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: ${(props) => props.theme.white};
+    background: ${(props) => props.theme['yellow-dark']};
+    border-radius: 10px;
   }
 `

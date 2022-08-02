@@ -1,4 +1,4 @@
-import { HeaderButtonsContainer, HeaderContainer } from './styles'
+import { CartButton, HeaderButtonsContainer, HeaderContainer } from './styles'
 import { IoLocationSharp, IoCart } from 'react-icons/io5'
 import { NavLink } from 'react-router-dom'
 import logoCoffeDelivery from '../../assets/logo-coffe-delivery.svg'
@@ -15,10 +15,10 @@ export function Header() {
           Recife, PE
         </span>
         <NavLink to="/checkout">
-          <button>
+          <CartButton bg-color="yellow-light" icon-color="yellow-dark">
             {true && <span>3</span>}
             <IoCart size={22} />
-          </button>
+          </CartButton>
         </NavLink>
       </HeaderButtonsContainer>
     </HeaderContainer>
