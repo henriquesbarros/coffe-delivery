@@ -19,11 +19,11 @@ export const HeaderButtonsContainer = styled.div`
     padding: 0.625rem; /* 10px */
     border-radius: 8px;
 
-    color: ${(props) => props.theme.purple};
-    background: ${(props) => props.theme['purple-light']};
+    color: ${(props) => props.theme.colors.purple};
+    background: ${(props) => props.theme.colors['purple-light']};
 
     svg {
-      color: ${(props) => props.theme.purple};
+      color: ${(props) => props.theme.colors.purple};
     }
   }
 `
@@ -43,12 +43,12 @@ export const CartButton = styled.button<CartButtonProps>`
   border-radius: 8px;
   border: none;
 
-  background: ${(props) => props.theme[`${props['bg-color']}`]};
+  background: ${(props) => props.theme.colors[`${props['bg-color']}`]};
 
   cursor: pointer;
 
   svg {
-    color: ${(props) => props.theme[`${props['icon-color']}`]};
+    color: ${(props) => props.theme.colors[`${props['icon-color']}`]};
   }
 
   span {
@@ -67,8 +67,8 @@ export const CartButton = styled.button<CartButtonProps>`
 
     font-weight: 700;
     font-size: 0.75rem;
-    color: ${(props) => props.theme.white};
-    background: ${(props) => props.theme['yellow-dark']};
+    color: ${(props) => props.theme.colors.white};
+    background: ${(props) => props.theme.colors['yellow-dark']};
     border-radius: 10px;
   }
 `
