@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface CartButtonContainerProps {
   bgColor: 'yellow-light' | 'purple-dark'
   iconColor: 'yellow-dark' | 'white'
+  coffeeListing?: boolean
 }
 
 export const CartButtonContainer = styled.button<CartButtonContainerProps>`
@@ -18,6 +19,16 @@ export const CartButtonContainer = styled.button<CartButtonContainerProps>`
   background: ${(props) => props.theme.colors[`${props.bgColor}`]};
 
   cursor: pointer;
+
+  transition: 0.1s;
+
+  ${(props) =>
+    props.coffeeListing &&
+    `
+    &:hover {
+      background: ${props.theme.colors.purple}
+    }
+  `}
 
   svg {
     color: ${(props) => props.theme.colors[`${props.iconColor}`]};

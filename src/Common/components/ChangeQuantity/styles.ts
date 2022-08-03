@@ -16,11 +16,14 @@ export const ChangeQuantityContainer = styled.div`
     background: transparent;
     cursor: pointer;
 
-    span {
-    }
-
     svg {
       color: ${(props) => props.theme.colors.purple};
+
+      transition: 0.1s;
+
+      &:hover {
+        color: ${(props) => props.theme.colors['purple-dark']};
+      }
     }
   }
 `

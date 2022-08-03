@@ -39,7 +39,11 @@ export function CoffeesListing() {
                   <span>{formatMoney(coffee.price)}</span>
                 </CoffeePrice>
                 <ChangeQuantity />
-                <CartButton bgColor="purple-dark" iconColor="white" />
+                <CartButton
+                  bgColor="purple-dark"
+                  iconColor="white"
+                  coffeeListing
+                />
               </AddToCartContainer>
             </CoffeeCard>
           )
