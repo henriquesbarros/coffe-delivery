@@ -20,7 +20,7 @@ export const defaultTheme = {
     'title-xl': '3rem',
     'title-l': '2rem',
     'title-m': '1.5rem',
-    'title-s': '1.2rem',
+    'title-s': '1.25rem',
     'title-xs': '1.125rem',
     'text-regular-l': '1.25rem',
     'text-bold-l': '1.25rem',

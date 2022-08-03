@@ -6,6 +6,7 @@ import {
   ServicesContainer,
 } from './styles'
 import coffeImage from '../../assets/main-image.png'
+import { CoffeesListing } from './components/CoffeesListing'
 
 export function Home() {
   return (
@@ -31,6 +32,7 @@ export function Home() {
           <img src={coffeImage} alt="" />
         </figure>
       </Introduction>
+      <CoffeesListing />
     </HomeContainer>
   )
 }
