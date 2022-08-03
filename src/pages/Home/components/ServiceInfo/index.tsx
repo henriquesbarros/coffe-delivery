@@ -1,5 +1,4 @@
-import { IoCart, IoCube, IoTime } from 'react-icons/io5'
-import { FaCoffee } from 'react-icons/fa'
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import { Info, InfoIcon } from './styles'
 
 interface ServiceInfoProps {
@@ -14,7 +13,7 @@ export function ServiceInfo({ service }: ServiceInfoProps) {
         return (
           <Info>
             <InfoIcon bg-color="yellow-dark">
-              <IoCart />
+              <ShoppingCart size={22} weight="fill" />
             </InfoIcon>
             <p>Compra simples e segura</p>
           </Info>
@@ -23,7 +22,7 @@ export function ServiceInfo({ service }: ServiceInfoProps) {
         return (
           <Info>
             <InfoIcon bg-color="yellow">
-              <IoCube />
+              <Package size={22} weight="fill" />
             </InfoIcon>
             <p>Embalagem mantém o café intacto</p>
           </Info>
@@ -32,7 +31,7 @@ export function ServiceInfo({ service }: ServiceInfoProps) {
         return (
           <Info>
             <InfoIcon bg-color="text">
-              <IoTime />
+              <Timer size={22} weight="fill" />
             </InfoIcon>
             <p>Entrega rápida e rastreada</p>
           </Info>
@@ -41,7 +40,7 @@ export function ServiceInfo({ service }: ServiceInfoProps) {
         return (
           <Info>
             <InfoIcon bg-color="purple">
-              <FaCoffee />
+              <Coffee size={22} weight="fill" />
             </InfoIcon>
             <p>Embalagem mantém o café intacto</p>
           </Info>

@@ -1,5 +1,5 @@
 import { HeaderButtonsContainer, HeaderContainer } from './styles'
-import { IoLocationSharp } from 'react-icons/io5'
+import { MapPin } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import logoCoffeDelivery from '../../../assets/logo-coffe-delivery.svg'
 import { CartButton } from '../CartButton'
@@ -12,7 +12,7 @@ export function Header() {
       </NavLink>
       <HeaderButtonsContainer>
         <span>
-          <IoLocationSharp size={22} />
+          <MapPin size={22} weight="fill" />
           Recife, PE
         </span>
         <NavLink to="/checkout">
