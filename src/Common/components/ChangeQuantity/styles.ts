@@ -11,6 +11,11 @@ export const ChangeQuantityContainer = styled.div`
 
   background: ${(props) => props.theme.colors.button};
 
+  span {
+    width: 1.125rem;
+    text-align: center;
+  }
+
   button {
     border: none;
     background: transparent;
@@ -18,10 +23,13 @@ export const ChangeQuantityContainer = styled.div`
 
     svg {
       color: ${(props) => props.theme.colors.purple};
+      &:disabled {
+        opacity: 0.4;
+      }
 
       transition: 0.1s;
 
-      &:hover {
+      &:not(:disabled):hover {
         color: ${(props) => props.theme.colors['purple-dark']};
       }
     }
