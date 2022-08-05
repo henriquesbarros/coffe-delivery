@@ -4,6 +4,7 @@ export const defaultTheme = {
     background: '#FAFAFA',
     card: '#F3F2F2',
     button: '#E6E5E5',
+    input: '#EDEDED',
     hover: '#D7D5D5',
     label: '#8D8686',
     text: '#574F4D',
@@ -32,5 +33,12 @@ export const defaultTheme = {
   fonts: {
     regular: "'Roboto'",
     title: "'Baloo 2'",
+  },
+  'input-sizes': {
+    xs: '3.75rem',
+    s: '12.5rem',
+    m: '17.25rem',
+    l: '21.75rem',
+    xl: '35rem',
   },
 }

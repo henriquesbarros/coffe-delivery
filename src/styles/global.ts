@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -20,4 +20,9 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+`
+
+export const Flex = styled.div`
+  display: flex;
+  gap: 0.75rem;
 `

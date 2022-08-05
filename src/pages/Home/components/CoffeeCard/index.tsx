@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { CartButton } from '../../../../Common/components/CartButton'
-import { ChangeQuantity } from '../../../../Common/components/ChangeQuantity'
+import { ChangeQuantity } from '../../../../common/components/ChangeQuantity'
 import { CartContext } from '../../../../contexts/CartContext'
 import { formatMoney } from '../../../../utils/formatMoney'
 import {
