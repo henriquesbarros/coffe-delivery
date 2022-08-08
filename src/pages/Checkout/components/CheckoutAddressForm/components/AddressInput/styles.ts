@@ -1,39 +1,23 @@
 import styled from 'styled-components'
 
 export const AddressInputsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
+  width: 100%;
+  display: grid;
+  grid-template-columns: 12.5rem 17.25rem 3.75rem;
+  column-gap: 0.75rem;
   row-gap: 1rem;
-`
+  grid-auto-flow: dense;
 
-interface AddressInputProps {
-  w?: string
-}
-
-export const AddressInput = styled.input<AddressInputProps>`
-  height: 2.625rem;
-  width: ${(props) => [props.w]};
-  padding: 0.75rem;
-  border: 1px solid ${(props) => props.theme.colors.button};
-  border-radius: 4px;
-  background: ${(props) => [props.theme.colors.input]};
-
-  &::placeholder {
-    font-size: ${(props) => props.theme['text-sizes']['text-regular-s']};
-    color: ${(props) => props.theme.colors.label};
-    line-height: 130%;
+  .cep {
+    grid-column: span 3;
+    max-width: 12.5rem;
   }
 
-  &:focus {
-    border-color: ${(props) => props.theme.colors['yellow-dark']};
-    box-shadow: ${(props) => props.theme.colors['yellow-dark']};
+  .street {
+    grid-column: span 3;
   }
-`
 
-export const OptionalText = styled.p`
-  font-size: 0.75rem;
-  margin-right: 0.75rem;
-  font-style: italic;
-  color: ${(props) => props.theme.colors.label};
+  .complement {
+    grid-column: span 2;
+  }
 `

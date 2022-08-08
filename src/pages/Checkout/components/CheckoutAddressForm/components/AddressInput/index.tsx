@@ -1,24 +1,68 @@
-import { Flex } from '../../../../../../styles/global'
-import { defaultTheme } from '../../../../../../styles/themes/default'
-import { AddressInput, AddressInputsContainer } from './styles'
+import { useFormContext } from 'react-hook-form'
+import { Input } from '../../../../../../common/components/Input'
+import { AddressInputsContainer } from './styles'
+
+interface ErrorsType {
+  errors: {
+    [key: string]: {
+      message: string
+    }
+  }
+}
 
 export function AddressInputs() {
+  const { register, formState } = useFormContext()
+
+  const { errors } = formState as unknown as ErrorsType
+
   return (
     <AddressInputsContainer>
-      <AddressInput w={defaultTheme['input-sizes'].s} placeholder="CEP" />
-      <AddressInput placeholder="Rua" />
-      <Flex>
-        <AddressInput w={defaultTheme['input-sizes'].s} placeholder="Número" />
-        <AddressInput
-          w={defaultTheme['input-sizes'].l}
-          placeholder="Complemento"
-        />
-      </Flex>
-      <Flex>
-        <AddressInput w={defaultTheme['input-sizes'].s} placeholder="Bairro" />
-        <AddressInput w={defaultTheme['input-sizes'].m} placeholder="Cidade" />
-        <AddressInput w={defaultTheme['input-sizes'].xs} placeholder="UF" />
-      </Flex>
+      <Input
+        type="number"
+        placeholder="CEP"
+        className="cep"
+        {...register('cep')}
+        error={errors.cep?.message}
+      />
+      <Input
+        type="text"
+        placeholder="Rua"
+        className="street"
+        {...register('street')}
+        error={errors.street?.message}
+      />
+      <Input
+        type="number"
+        placeholder="Número"
+        {...register('number')}
+        error={errors.number?.message}
+      />
+      <Input
+        type="text"
+        placeholder="Complemento"
+        className="complement"
+        {...register('complement')}
+        error={errors.complement?.message}
+        rightText="Opcional"
+      />
+      <Input
+        type="text"
+        placeholder="Bairro"
+        {...register('disctrict')}
+        error={errors.disctrict?.message}
+      />
+      <Input
+        type="text"
+        placeholder="Cidade"
+        {...register('city')}
+        error={errors.city?.message}
+      />
+      <Input
+        type="text"
+        placeholder="UF"
+        {...register('uf')}
+        error={errors.uf?.message}
+      />
     </AddressInputsContainer>
   )
 }
