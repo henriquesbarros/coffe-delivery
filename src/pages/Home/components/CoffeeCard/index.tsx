@@ -12,7 +12,7 @@ import {
   CoffeeTags,
 } from './styles'
 
-interface Coffee {
+export interface Coffee {
   id: number
   photo: string
   tags: string[]
@@ -25,9 +25,7 @@ interface CoffeeCardProps {
   coffee: Coffee
 }
 
-export function CoffeeCard({
-  coffee: { id, photo, tags, name, description, price },
-}: CoffeeCardProps) {
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
   const { handleAddToCart } = useContext(CartContext)
   const [quantity, setQuantity] = useState<number>(1)
 
@@ -44,23 +42,23 @@ export function CoffeeCard({
   }
 
   return (
-    <CoffeeCardContainer key={id}>
+    <CoffeeCardContainer key={coffee.id}>
       <figure>
-        <img src={`src/assets/coffees/${photo}`} alt="" />
+        <img src={`src/assets/coffees/${coffee.photo}`} alt="" />
       </figure>
       <CoffeeTags>
-        {tags.map((tag) => (
+        {coffee.tags.map((tag) => (
           <p key={tag}>{tag.toUpperCase()}</p>
         ))}
       </CoffeeTags>
 
-      <CoffeeName>{name}</CoffeeName>
-      <CoffeeDescription>{description}</CoffeeDescription>
+      <CoffeeName>{coffee.name}</CoffeeName>
+      <CoffeeDescription>{coffee.description}</CoffeeDescription>
 
       <AddToCartContainer>
         <CoffeePrice>
           <p>R$</p>
-          <span>{formatMoney(price)}</span>
+          <span>{formatMoney(coffee.price)}</span>
         </CoffeePrice>
         <ChangeQuantity
           quantity={quantity}
@@ -71,8 +69,9 @@ export function CoffeeCard({
           bgColor="purple-dark"
           iconColor="white"
           coffeeListing
-          handleClick={handleAddToCart}
+          coffee={coffee}
           quantity={quantity}
+          handleClick={handleAddToCart}
           resetCartQuantity={resetCartQuantity}
         />
       </AddToCartContainer>
