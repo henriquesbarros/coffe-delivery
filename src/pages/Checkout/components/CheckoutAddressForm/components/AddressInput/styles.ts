@@ -8,6 +8,8 @@ export const AddressInputsContainer = styled.div`
   row-gap: 1rem;
   grid-auto-flow: dense;
 
+  margin-top: 2rem;
+
   .cep {
     grid-column: span 3;
     max-width: 12.5rem;

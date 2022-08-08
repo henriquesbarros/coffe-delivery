@@ -8,3 +8,9 @@ export const PaymentMethodsContainer = styled.section`
   padding: 2.5rem;
   background-color: ${(props) => props.theme.colors.card};
 `
+export const PaymentMethods = styled.div`
+  display: flex;
+  gap: 0.75rem;
+
+  margin-top: 1rem;
+`

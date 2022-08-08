@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const BoxTitleContainer = styled.div`
   display: flex;
   gap: 0.5rem;
-
-  margin-bottom: 2rem;
 `
 
 export const TitleAndSubtitle = styled.div`
