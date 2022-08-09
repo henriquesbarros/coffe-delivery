@@ -42,4 +42,4 @@ export const defaultTheme = {
     l: '21.75rem',
     xl: '35rem',
   },
-}
+} as const

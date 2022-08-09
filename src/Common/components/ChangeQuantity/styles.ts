@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const ChangeQuantityContainer = styled.div`
+  max-width: 4.5rem;
   padding: 0.5rem 0.55rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-right: 0.5rem;
 
-  border-radius: 10px;
+  border-radius: 6px;
 
   background: ${(props) => props.theme.colors.button};
 
