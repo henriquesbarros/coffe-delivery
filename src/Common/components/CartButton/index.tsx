@@ -5,8 +5,8 @@ import { CartContext } from '../../../contexts/CartContext'
 import { Coffee } from '../../../pages/Home/components/CoffeeCard'
 
 interface CartButtonProps {
-  bgColor: 'yellow-light' | 'purple-dark'
-  iconColor: 'yellow-dark' | 'white'
+  bgColor: 'yellow-light' | 'purple-dark' | 'input'
+  iconColor: 'yellow-dark' | 'white' | 'label'
   coffeeListing?: boolean
   coffee: Coffee
   quantity: number
@@ -24,7 +24,7 @@ export function CartButton({
   coffeeListing = false,
   coffee,
   quantity,
-  handleClick,
+  handleClick = () => {},
   resetCartQuantity,
 }: CartButtonProps) {
   const { cartItems } = useContext(CartContext)
@@ -40,7 +40,7 @@ export function CartButton({
       coffeeListing={coffeeListing}
       onClick={() => handleClick(coffee, quantity, resetCartQuantity)}
     >
-      {!coffeeListing && cartItems ? (
+      {!coffeeListing && cartItems.length ? (
         <span>{quantityOfItemsInCart}</span>
       ) : (
         <></>

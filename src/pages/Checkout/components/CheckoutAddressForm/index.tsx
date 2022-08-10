@@ -1,5 +1,5 @@
 import { MapPinLine } from 'phosphor-react'
-import { BoxTitle } from '../../../../common/components/BoxTitlte'
+import { BoxTitle } from '../../../../Common/components/BoxTitlte'
 import { defaultTheme } from '../../../../styles/themes/default'
 import { AddressInputs } from './components/AddressInput'
 import { AddressFormContainer, CheckoutAddressFormContainer } from './styles'

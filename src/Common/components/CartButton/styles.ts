@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 interface CartButtonContainerProps {
-  bgColor: 'yellow-light' | 'purple-dark'
-  iconColor: 'yellow-dark' | 'white'
+  bgColor: 'yellow-light' | 'purple-dark' | 'input'
+  iconColor: 'yellow-dark' | 'white' | 'label'
   coffeeListing?: boolean
 }
 

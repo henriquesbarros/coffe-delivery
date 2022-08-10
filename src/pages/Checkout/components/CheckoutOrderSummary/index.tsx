@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { Button } from '../../../../common/components/Button'
+import { Button } from '../../../../Common/components/Button'
 import { CartContext } from '../../../../contexts/CartContext'
+import { formatMoney } from '../../../../utils/formatMoney'
 import { OrderSummaryItem } from './components/OrderSummaryItem'
 import {
   CheckoutOrderSummaryContainer,
@@ -13,6 +14,18 @@ import {
 
 export function CheckoutOrderSummary() {
   const { cartItems } = useContext(CartContext)
+
+  const totalItemsPrice = cartItems.reduce((total, currentCartItem) => {
+    return total + currentCartItem.quantity * currentCartItem.price
+  }, 0)
+
+  const totalItemsPriceFormatted = `R$ ${formatMoney(totalItemsPrice)}`
+
+  const DELIVERY = 3.5
+
+  const orderTotalPriceFormatted = `R$ ${formatMoney(
+    totalItemsPrice + DELIVERY,
+  )}`
 
   return (
     <CheckoutOrderSummaryContainer>
@@ -30,15 +43,15 @@ export function CheckoutOrderSummary() {
         <OrderSummaryPrices>
           <OrderSummaryTotalPrice>
             <p>Total de itens</p>
-            <p>R$ 29,70</p>
+            <p>{totalItemsPriceFormatted}</p>
           </OrderSummaryTotalPrice>
           <OrderSummaryDelivery>
             <p>Entrega</p>
-            <p>R$ 29,70</p>
+            <p>R$ 3,50</p>
           </OrderSummaryDelivery>
           <OrderSummaryFinalValue>
             <p>Total</p>
-            <p>R$ 33,20</p>
+            <p>{orderTotalPriceFormatted}</p>
           </OrderSummaryFinalValue>
         </OrderSummaryPrices>
         <Button

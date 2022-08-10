@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChangeQuantity } from '../../../../../../common/components/ChangeQuantity'
+import { ChangeQuantity } from '../../../../../../Common/components/ChangeQuantity'
 import { CartItem } from '../../../../../../contexts/CartContext'
 import { formatMoney } from '../../../../../../utils/formatMoney'
 import { RemoveItem } from './components/RemoveItem'

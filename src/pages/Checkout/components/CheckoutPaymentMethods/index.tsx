@@ -1,5 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react'
-import { BoxTitle } from '../../../../common/components/BoxTitlte'
+import { BoxTitle } from '../../../../Common/components/BoxTitlte'
 import { defaultTheme } from '../../../../styles/themes/default'
 import { PaymentMethodInput } from './components/PaymentMethodInput'
 import { PaymentMethodsContainer, PaymentMethods } from './styles'
