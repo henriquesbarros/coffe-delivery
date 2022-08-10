@@ -1,9 +1,14 @@
 import { Trash } from 'phosphor-react'
+import { MouseEventHandler } from 'react'
 import { RemoveItemContainer } from './styles'
 
-export function RemoveItem() {
+interface RemoveItemProps {
+  handleRemoveItemFromCart: MouseEventHandler<HTMLButtonElement>
+}
+
+export function RemoveItem({ handleRemoveItemFromCart }: RemoveItemProps) {
   return (
-    <RemoveItemContainer>
+    <RemoveItemContainer onClick={handleRemoveItemFromCart}>
       <Trash size={16} />
       REMOVER
     </RemoveItemContainer>

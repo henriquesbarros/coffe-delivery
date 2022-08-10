@@ -10,7 +10,7 @@ export const CheckoutAddressFormContainer = styled.section`
 `
 export const AddressFormContainer = styled.section`
   width: 40rem;
-  height: 23.25rem;
+  min-height: 23.25rem;
   margin-top: 1rem;
   border-radius: 6px;
   padding: 2.5rem;
