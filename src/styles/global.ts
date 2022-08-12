@@ -7,6 +7,12 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box
   }
 
+  html {
+    @media (max-width: 390px) {
+      font-size: 75%;
+    }
+  }
+
   body {
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};

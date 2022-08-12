@@ -6,11 +6,13 @@ export function CoffeesListing() {
   return (
     <ListCoffeesContainer>
       <h1>Nossos cafés</h1>
-      <ListCoffees>
-        {coffees.map((coffee) => {
-          return <CoffeeCard key={coffee.id} coffee={coffee} />
-        })}
-      </ListCoffees>
+      <div>
+        <ListCoffees>
+          {coffees.map((coffee) => {
+            return <CoffeeCard key={coffee.id} coffee={coffee} />
+          })}
+        </ListCoffees>
+      </div>
     </ListCoffeesContainer>
   )
 }

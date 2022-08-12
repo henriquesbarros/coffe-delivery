@@ -4,6 +4,18 @@ export const IntroductionContainer = styled.section`
   display: flex;
   justify-content: space-between;
   margin-left: 0;
+
+  @media (max-width: 390px) {
+    display: flex;
+    flex-direction: column;
+
+    figure img {
+      width: 28.5rem;
+      height: 25.25rem;
+
+      margin-top: 4rem;
+    }
+  }
 `
 
 export const MainText = styled.div`
