@@ -16,7 +16,7 @@ interface CartContextType {
     quantity: number,
     resetCoffeeQuantity: () => void,
   ) => void
-  handleRemoveItemFromCart: (cofeeeId: number) => void
+  removeCartItem: (cofeeeId: number) => void
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -48,7 +48,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     resetCoffeeQuantity()
   }
 
-  function handleRemoveItemFromCart(coffeeId: number) {
+  function removeCartItem(coffeeId: number) {
     const coffeesFiltered = cartItems.filter((coffee) => coffee.id !== coffeeId)
 
     setCartItems(coffeesFiltered)
@@ -56,7 +56,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, handleAddToCart, handleRemoveItemFromCart }}
+      value={{ cartItems, handleAddToCart, removeCartItem }}
     >
       {children}
     </CartContext.Provider>

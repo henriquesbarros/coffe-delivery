@@ -1,14 +1,21 @@
 import { Trash } from 'phosphor-react'
-import { MouseEventHandler } from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../../../../../../../../contexts/CartContext'
 import { RemoveItemContainer } from './styles'
 
 interface RemoveItemProps {
-  handleRemoveItemFromCart: MouseEventHandler<HTMLButtonElement>
+  coffeeId: number
 }
 
-export function RemoveItem({ handleRemoveItemFromCart }: RemoveItemProps) {
+export function RemoveItem({ coffeeId }: RemoveItemProps) {
+  const { removeCartItem } = useContext(CartContext)
+
+  function handleRemoveItem() {
+    removeCartItem(coffeeId)
+  }
+
   return (
-    <RemoveItemContainer onClick={handleRemoveItemFromCart}>
+    <RemoveItemContainer type="button" onClick={handleRemoveItem}>
       <Trash size={16} />
       REMOVER
     </RemoveItemContainer>

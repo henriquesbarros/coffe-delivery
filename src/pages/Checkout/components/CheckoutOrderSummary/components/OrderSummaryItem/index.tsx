@@ -1,6 +1,6 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { ChangeQuantity } from '../../../../../../Common/components/ChangeQuantity'
-import { CartContext, CartItem } from '../../../../../../contexts/CartContext'
+import { CartItem } from '../../../../../../contexts/CartContext'
 import { formatMoney } from '../../../../../../utils/formatMoney'
 import { RemoveItem } from './components/RemoveItem'
 import {
@@ -19,7 +19,6 @@ export function OrderSummaryItem({
   cartItem,
   coffeeQuantity,
 }: OrderSummaryItemProps) {
-  const { handleRemoveItemFromCart } = useContext(CartContext)
   const [quantity, setQuantity] = useState<number>(coffeeQuantity)
 
   function handleAddQuantity() {
@@ -45,7 +44,7 @@ export function OrderSummaryItem({
             handleAddQuantity={handleAddQuantity}
             handleRemoveQuantity={handleRemoveQuantity}
           />
-          <RemoveItem handleRemoveItemFromCart={handleRemoveItemFromCart} />
+          <RemoveItem coffeeId={cartItem.id} />
         </OrderSummaryItemActions>
       </div>
       <OrderSummaryItemPrice>{formattedPrice}</OrderSummaryItemPrice>
