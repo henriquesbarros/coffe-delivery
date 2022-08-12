@@ -8,8 +8,40 @@ import {
 } from './styles'
 import deliveryImage from '../../assets/delivery-image.png'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { OrderData } from '../Checkout'
+import { useEffect } from 'react'
+
+interface LocationType {
+  state: OrderData
+}
 
 export function Success() {
+  const { state } = useLocation() as unknown as LocationType
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/')
+    }
+  }, [navigate, state])
+
+  if (!state) return <></>
+
+  function paymentMethodSelected() {
+    if (state) {
+      switch (state.paymentMethod) {
+        case 'credit':
+          return 'Cartão de crédito'
+        case 'debit':
+          return 'Cartão de débito'
+        case 'money':
+          return 'Dinheiro'
+      }
+    }
+  }
+
   return (
     <SuccessContainer>
       <ConfirmationFeedbackTitles>
@@ -24,9 +56,9 @@ export function Success() {
             </IconWrapper>
             <div>
               <p>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em <strong>{`${state.street}, ${state.number}`}</strong>
               </p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>{`${state.district} - ${state.city}, ${state.uf}`}</p>
             </div>
           </DeliveryInfo>
           <DeliveryInfo>
@@ -47,7 +79,7 @@ export function Success() {
             <div>
               <p>Pagamento na entrega</p>
               <p>
-                <strong>Cartão de crédito</strong>
+                <strong>{paymentMethodSelected()}</strong>
               </p>
             </div>
           </DeliveryInfo>

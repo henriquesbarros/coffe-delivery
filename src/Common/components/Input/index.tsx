@@ -1,5 +1,11 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
-import { InputContainer, InputWrapper, InputStyled, RightText } from './styles'
+import {
+  InputContainer,
+  InputWrapper,
+  InputStyled,
+  RightText,
+  Error,
+} from './styles'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string
@@ -15,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <InputStyled {...props} ref={ref} />
           {rightText && <RightText>{rightText}</RightText>}
         </InputContainer>
-        {error && <div>{error}</div>}
+        {error && <Error>{error}</Error>}
       </InputWrapper>
     )
   },

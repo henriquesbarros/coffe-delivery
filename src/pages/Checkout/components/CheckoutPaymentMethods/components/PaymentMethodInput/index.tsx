@@ -1,4 +1,5 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
+/* eslint-disable react/display-name */
+import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
 import { PaymentMethodContainer, ContentContainer } from './styles'
 
 type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -6,15 +7,13 @@ type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
 }
 
-export function PaymentMethodInput({
-  id,
-  icon,
-  label,
-  ...props
-}: PaymentMethodInputProps) {
+export const PaymentMethodInput = forwardRef<
+  HTMLInputElement,
+  PaymentMethodInputProps
+>(({ id, icon, label, ...props }, ref) => {
   return (
     <PaymentMethodContainer>
-      <input type="radio" id={id} name="paymentMethod" {...props} />
+      <input type="radio" id={id} name="paymentMethod" {...props} ref={ref} />
       <label htmlFor={id}>
         <ContentContainer>
           {icon}
@@ -23,4 +22,4 @@ export function PaymentMethodInput({
       </label>
     </PaymentMethodContainer>
   )
-}
+})

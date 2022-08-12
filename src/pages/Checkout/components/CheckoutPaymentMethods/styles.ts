@@ -14,3 +14,10 @@ export const PaymentMethods = styled.div`
 
   margin-top: 1rem;
 `
+
+export const Error = styled.p`
+  font-size: ${(props) => props.theme['text-sizes']['text-bold-s']};
+  color: ${(props) => props.theme.colors.error};
+
+  margin-top: 0.5rem;
+`

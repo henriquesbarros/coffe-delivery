@@ -1,10 +1,18 @@
+/* eslint-disable no-unused-vars */
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import * as zod from 'zod'
 import { CheckoutAddressForm } from './components/CheckoutAddressForm'
 import { CheckoutOrderSummary } from './components/CheckoutOrderSummary'
 import { CheckoutPaymentMethods } from './components/CheckoutPaymentMethods'
 import { Box, CheckoutContainer } from './styles'
+
+enum PaymentMethods {
+  credit = 'credit',
+  debit = 'debit',
+  money = 'money',
+}
 
 const checkoutFormVlidationSchema = zod.object({
   cep: zod.string().min(1, 'Informe o CEP'),
@@ -14,6 +22,11 @@ const checkoutFormVlidationSchema = zod.object({
   district: zod.string().min(1, 'Informe o Bairro'),
   city: zod.string().min(1, 'Informe a Cidade'),
   uf: zod.string().min(1, 'Informe a UF'),
+  paymentMethod: zod.nativeEnum(PaymentMethods, {
+    errorMap: () => {
+      return { message: 'Informe o método de pagamento' }
+    },
+  }),
 })
 
 export type OrderData = zod.infer<typeof checkoutFormVlidationSchema>
@@ -27,8 +40,12 @@ export function Checkout() {
 
   const { handleSubmit } = checkoutForm
 
+  const navigate = useNavigate()
+
   function handleConfirmOrder(data: CheckoutFormData) {
-    console.log()
+    navigate('/success', {
+      state: data,
+    })
   }
 
   return (

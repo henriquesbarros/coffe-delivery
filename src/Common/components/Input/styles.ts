@@ -58,3 +58,8 @@ export const RightText = styled.p`
   font-style: italic;
   color: ${(props) => props.theme.colors.label};
 `
+
+export const Error = styled.div`
+  font-size: ${(props) => props.theme['text-sizes']['text-bold-s']};
+  color: ${(props) => props.theme.colors.error};
+`
