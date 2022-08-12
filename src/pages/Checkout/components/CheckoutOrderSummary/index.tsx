@@ -32,13 +32,7 @@ export function CheckoutOrderSummary() {
       <h1>Cafés selecionados</h1>
       <OrderSummaryContainer>
         {cartItems.map((cartItem) => {
-          return (
-            <OrderSummaryItem
-              key={cartItem.id}
-              cartItem={cartItem}
-              coffeeQuantity={cartItem.quantity}
-            />
-          )
+          return <OrderSummaryItem key={cartItem.id} cartItem={cartItem} />
         })}
         <OrderSummaryPrices>
           <OrderSummaryTotalPrice>

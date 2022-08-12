@@ -2,7 +2,7 @@ import { HeaderButtonsContainer, HeaderContainer } from './styles'
 import { MapPin } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import logoCoffeDelivery from '../../../assets/logo-coffe-delivery.svg'
-import { CartButton } from '../CartButton'
+import { CartButton } from './components/CartButton'
 import { useContext } from 'react'
 import { CartContext } from '../../../contexts/CartContext'
 
