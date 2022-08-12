@@ -30,7 +30,7 @@ export function OrderSummaryItem({ cartItem }: OrderSummaryItemProps) {
   return (
     <OrderSummaryItemContainer key={cartItem.id}>
       <figure>
-        <img src={`src/assets/coffees/${cartItem.photo}`} alt="" />
+        <img src={`/coffees/${cartItem.photo}`} alt="" />
       </figure>
       <div>
         <OrderSummaryItemName>{cartItem.name}</OrderSummaryItemName>
