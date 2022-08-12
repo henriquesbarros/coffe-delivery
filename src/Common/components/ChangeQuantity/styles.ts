@@ -16,23 +16,25 @@ export const ChangeQuantityContainer = styled.div`
     width: 1.125rem;
     text-align: center;
   }
+`
 
-  button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
+export const IconWrapper = styled.button`
+  border: none;
+  background: transparent;
+  cursor: pointer;
 
-    svg {
-      color: ${(props) => props.theme.colors.purple};
-      &:disabled {
-        opacity: 0.4;
-      }
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 
-      transition: 0.1s;
+  transition: 0.1s;
 
-      &:not(:disabled):hover {
-        color: ${(props) => props.theme.colors['purple-dark']};
-      }
-    }
+  &:not(:disabled):hover {
+    color: ${(props) => props.theme.colors['purple-dark']};
+  }
+
+  svg {
+    color: ${(props) => props.theme.colors.purple};
   }
 `

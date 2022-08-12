@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { ChangeQuantity } from '../../../../../../Common/components/ChangeQuantity'
-import { CartItem } from '../../../../../../contexts/CartContext'
+import { CartContext, CartItem } from '../../../../../../contexts/CartContext'
 import { formatMoney } from '../../../../../../utils/formatMoney'
 import { RemoveItem } from './components/RemoveItem'
 import {
@@ -12,21 +12,17 @@ import {
 
 interface OrderSummaryItemProps {
   cartItem: CartItem
-  coffeeQuantity: number
 }
 
-export function OrderSummaryItem({
-  cartItem,
-  coffeeQuantity,
-}: OrderSummaryItemProps) {
-  const [quantity, setQuantity] = useState<number>(coffeeQuantity)
+export function OrderSummaryItem({ cartItem }: OrderSummaryItemProps) {
+  const { changeCartQuantity } = useContext(CartContext)
 
   function handleAddQuantity() {
-    setQuantity((state) => state + 1)
+    changeCartQuantity(cartItem.id, 'add')
   }
 
   function handleRemoveQuantity() {
-    setQuantity((state) => state - 1)
+    changeCartQuantity(cartItem.id, 'remove')
   }
 
   const formattedPrice = `R$ ${formatMoney(cartItem.price)}`
@@ -40,7 +36,7 @@ export function OrderSummaryItem({
         <OrderSummaryItemName>{cartItem.name}</OrderSummaryItemName>
         <OrderSummaryItemActions>
           <ChangeQuantity
-            quantity={quantity}
+            quantity={cartItem.quantity}
             handleAddQuantity={handleAddQuantity}
             handleRemoveQuantity={handleRemoveQuantity}
           />

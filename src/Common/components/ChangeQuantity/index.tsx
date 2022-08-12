@@ -1,5 +1,5 @@
 import { Plus, Minus } from 'phosphor-react'
-import { ChangeQuantityContainer } from './styles'
+import { ChangeQuantityContainer, IconWrapper } from './styles'
 
 interface ChangeQuantityProps {
   quantity: number
@@ -14,13 +14,17 @@ export function ChangeQuantity({
 }: ChangeQuantityProps) {
   return (
     <ChangeQuantityContainer>
-      <button onClick={handleRemoveQuantity} disabled={quantity <= 1}>
-        <Minus />
-      </button>
+      <IconWrapper
+        onClick={handleRemoveQuantity}
+        disabled={quantity <= 1}
+        type="button"
+      >
+        <Minus weight="fill" />
+      </IconWrapper>
       <span>{quantity}</span>
-      <button onClick={handleAddQuantity}>
-        <Plus />
-      </button>
+      <IconWrapper onClick={handleAddQuantity} type="button">
+        <Plus weight="fill" />
+      </IconWrapper>
     </ChangeQuantityContainer>
   )
 }
