@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export const CheckoutOrderSummaryContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   h1 {
     font-size: ${(props) => props.theme['text-sizes']['title-xs']};
     font-family: ${(props) => props.theme.fonts.title};

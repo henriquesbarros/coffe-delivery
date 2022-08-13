@@ -6,7 +6,6 @@ export const CheckoutContainer = styled.main`
   form {
     display: flex;
     column-gap: 2rem;
-    align-items: center;
   }
 `
 
