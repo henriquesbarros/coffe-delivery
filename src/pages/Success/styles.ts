@@ -9,11 +9,19 @@ export const ConfirmationFeedbackTitles = styled.div`
     font-size: ${(props) => props.theme['text-sizes']['title-l']};
     color: ${(props) => props.theme.colors['yellow-dark']};
     line-height: 130%;
+
+    @media (max-width: 390px) {
+      text-align: center;
+    }
   }
 
   p {
     font-size: ${(props) => props.theme['text-sizes']['text-bold-l']};
     color: ${(props) => props.theme.colors.subtitle};
+
+    @media (max-width: 390px) {
+      text-align: center;
+    }
   }
 
   margin-bottom: 2.5rem;
@@ -23,6 +31,16 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 390px) {
+    flex-direction: column;
+
+    figure img {
+      margin-top: 3rem;
+      width: 32rem;
+      height: 20rem;
+    }
+  }
 `
 
 export const DeliveryInfos = styled.div`
