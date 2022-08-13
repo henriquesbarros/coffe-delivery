@@ -48,6 +48,7 @@ export function AddressInputs() {
       <Input
         type="text"
         placeholder="Bairro"
+        className="district"
         {...register('district')}
         error={errors.district?.message}
       />

@@ -6,6 +6,7 @@ import * as zod from 'zod'
 import { CheckoutAddressForm } from './components/CheckoutAddressForm'
 import { CheckoutOrderSummary } from './components/CheckoutOrderSummary'
 import { CheckoutPaymentMethods } from './components/CheckoutPaymentMethods'
+import { useWindowDimensions } from '../../hooks/useWindowDimensions'
 import { Box, CheckoutContainer } from './styles'
 
 enum PaymentMethods {
@@ -40,6 +41,8 @@ export function Checkout() {
 
   const { handleSubmit } = checkoutForm
 
+  const { width } = useWindowDimensions()
+
   const navigate = useNavigate()
 
   function handleConfirmOrder(data: CheckoutFormData) {
@@ -52,11 +55,21 @@ export function Checkout() {
     <CheckoutContainer>
       <FormProvider {...checkoutForm}>
         <form onSubmit={handleSubmit(handleConfirmOrder)}>
-          <Box>
-            <CheckoutAddressForm />
-            <CheckoutPaymentMethods />
-          </Box>
-          <CheckoutOrderSummary />
+          {width <= 390 ? (
+            <Box>
+              <CheckoutAddressForm />
+              <CheckoutPaymentMethods />
+              <CheckoutOrderSummary />
+            </Box>
+          ) : (
+            <>
+              <Box>
+                <CheckoutAddressForm />
+                <CheckoutPaymentMethods />
+              </Box>
+              <CheckoutOrderSummary />
+            </>
+          )}
         </form>
       </FormProvider>
     </CheckoutContainer>

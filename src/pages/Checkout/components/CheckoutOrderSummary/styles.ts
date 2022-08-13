@@ -6,6 +6,11 @@ export const CheckoutOrderSummaryContainer = styled.section`
     font-family: ${(props) => props.theme.fonts.title};
     color: ${(props) => props.theme.colors.subtitle};
     line-height: 130%;
+
+    @media (max-width: 390px) {
+      margin-top: 2rem;
+      text-align: center;
+    }
   }
 `
 
@@ -16,6 +21,11 @@ export const OrderSummaryContainer = styled.div`
   border-radius: 6px;
   padding: 2.5rem;
   background-color: ${(props) => props.theme.colors.card};
+
+  @media (max-width: 390px) {
+    width: 30rem;
+    padding: 3.33rem;
+  }
 `
 
 export const OrderSummaryPrices = styled.section`

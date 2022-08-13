@@ -6,6 +6,10 @@ export const CheckoutAddressFormContainer = styled.section`
     font-family: ${(props) => props.theme.fonts.title};
     color: ${(props) => props.theme.colors.subtitle};
     line-height: 130%;
+
+    @media (max-width: 390px) {
+      text-align: center;
+    }
   }
 `
 export const AddressFormContainer = styled.section`
@@ -15,4 +19,8 @@ export const AddressFormContainer = styled.section`
   border-radius: 6px;
   padding: 2.5rem;
   background-color: ${(props) => props.theme.colors.card};
+
+  @media (max-width: 390px) {
+    width: 30rem;
+  }
 `

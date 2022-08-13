@@ -22,4 +22,25 @@ export const AddressInputsContainer = styled.div`
   .complement {
     grid-column: span 2;
   }
+
+  @media (max-width: 390px) {
+    grid-template-columns: 19.5rem 5rem;
+
+    .cep {
+      grid-column: span 2;
+      max-width: 12.5rem;
+    }
+
+    .street {
+      grid-column: span 1;
+    }
+
+    .complement {
+      grid-column: span 2;
+    }
+
+    .district {
+      grid-column: span 2;
+    }
+  }
 `

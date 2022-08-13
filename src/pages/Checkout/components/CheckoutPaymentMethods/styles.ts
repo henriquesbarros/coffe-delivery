@@ -2,15 +2,20 @@ import styled from 'styled-components'
 
 export const PaymentMethodsContainer = styled.section`
   width: 40rem;
-  height: 12.9375rem;
+  min-height: 12.9375rem;
   margin-top: 1rem;
   border-radius: 6px;
   padding: 2.5rem;
   background-color: ${(props) => props.theme.colors.card};
+
+  @media (max-width: 390px) {
+    width: 30rem;
+  }
 `
 export const PaymentMethods = styled.div`
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
 
   margin-top: 1rem;
 `
